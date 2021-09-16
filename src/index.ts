@@ -26,10 +26,10 @@ class Employee {
   }
 
   // uc2 - checking attendance as per day
-  // checkAttendance(day = this.attendance.length - 1) {
-  //   if (day >= this.attendance.length) return false;
-  //   return this.attendance[day] ? "present" : "absent";
-  // }
+  checkAttendance(day = this.attendance.length - 1) {
+    if (day >= this.attendance.length) return false;
+    return this.attendance[day] ? "present" : "absent";
+  }
 
   // // uc3 - generate daily wage of an employee based on random attendance
   // generateRandomDailyWage() {
@@ -191,7 +191,7 @@ class Employee {
 }
 
 const dk = new Employee();
-
+dk.checkAttendance();
 // const restrictedWage = dk.getRestrictedWage();
 // console.log(
 //   `Daily pays: ${dk.wages}\nMonthly pay: ${restrictedWage.monthlyPay}\nWorking hours: ${restrictedWage.workingHours}/${maxHours}\nWorking days: ${restrictedWage.workingDays}/${maxDays}`
