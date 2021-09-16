@@ -176,18 +176,18 @@ class Employee {
     return wageMap;
   }
 
-  // // uc11 - object creation
-  // get allWageObject() {
-  //   const allWageDetails: any = {};
-  //   allWageDetails.wages = this.detailedDailyWage.map((day) => {
-  //     return {
-  //       day: day.day,
-  //       wage: day.wage,
-  //       hours: day.wage / 20,
-  //     };
-  //   });
-  //   return allWageDetails;
-  // }
+  // uc11 - object creation
+  get allWageObject() {
+    const allWageDetails: any = {};
+    allWageDetails.wages = this.detailedDailyWage.map((day) => {
+      return {
+        day: day.day,
+        wage: day.wage,
+        hours: day.wage / 20,
+      };
+    });
+    return allWageDetails;
+  }
 }
 
 const dk = new Employee();
@@ -227,8 +227,8 @@ console.log(`Total working days: ${dk.workingDays}`);
 console.log("Wage map:");
 console.log(dk.wageMap);
 
-// // uc11
-// console.log("Wage object:");
-// console.log(dk.allWageObject);
+// uc11
+console.log("Wage object:");
+console.log(dk.allWageObject);
 
 // console.log(dk.checkAttendance());
