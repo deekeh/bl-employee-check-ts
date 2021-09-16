@@ -31,26 +31,26 @@ class Employee {
     return this.attendance[day] ? "present" : "absent";
   }
 
-  // // uc3 - generate daily wage of an employee based on random attendance
-  // generateRandomDailyWage() {
-  //   let hrs = 0;
-  //   let empCase: number = this.randomAttendance();
+  // uc3 - generate daily wage of an employee based on random attendance
+  generateRandomDailyWage() {
+    let hrs = 0;
+    let empCase: number = this.randomAttendance();
 
-  //   switch (empCase) {
-  //     case 0: // working parttime
-  //       hrs = parttime;
-  //       break;
-  //     case 1: // working fulltime
-  //       hrs = fulltime;
-  //       break;
-  //     default:
-  //       // on leave
-  //       hrs = 0;
-  //       break;
-  //   }
+    switch (empCase) {
+      case 0: // working parttime
+        hrs = parttime;
+        break;
+      case 1: // working fulltime
+        hrs = fulltime;
+        break;
+      default:
+        // on leave
+        hrs = 0;
+        break;
+    }
 
-  //   return hrs * dailyWage;
-  // }
+    return hrs * dailyWage;
+  }
 
   // // uc4 - generate monthly wage of an employee based on 20 random attendances
   // generateRandomMonthlyWage() {
@@ -191,7 +191,7 @@ class Employee {
 }
 
 const dk = new Employee();
-dk.checkAttendance();
+console.log(dk.generateRandomDailyWage());
 // const restrictedWage = dk.getRestrictedWage();
 // console.log(
 //   `Daily pays: ${dk.wages}\nMonthly pay: ${restrictedWage.monthlyPay}\nWorking hours: ${restrictedWage.workingHours}/${maxHours}\nWorking days: ${restrictedWage.workingDays}/${maxDays}`
