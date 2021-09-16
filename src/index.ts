@@ -83,48 +83,48 @@ class Employee {
     return monthlyPay;
   }
 
-  // getRestrictedWage() {
-  //   this.generateRandomMonthlyWage();
-  //   // setting initial values
-  //   let monthlyPay = 0,
-  //     workingHours = 0,
-  //     workingDays = 0,
-  //     monthDays = 0;
+  getRestrictedWage() {
+    this.generateRandomMonthlyWage();
+    // setting initial values
+    let monthlyPay = 0,
+      workingHours = 0,
+      workingDays = 0,
+      monthDays = 0;
 
-  //   // loop through 20 days of the month
-  //   for (let a of this.attendance) {
-  //     if (workingHours > maxHours && monthDays > maxDays) break;
+    // loop through 20 days of the month
+    for (let a of this.attendance) {
+      if (workingHours > maxHours && monthDays > maxDays) break;
 
-  //     monthDays += 1;
-  //     let currentWorking: number = 0;
-  //     const currentWorkingHours = a;
+      monthDays += 1;
+      let currentWorking: number = 0;
+      const currentWorkingHours = a;
 
-  //     // calculate daily pay as per attendance
-  //     switch (currentWorkingHours) {
-  //       case 0: // working parttime
-  //         currentWorking = parttime;
-  //         workingHours += parttime;
-  //         workingDays++;
-  //         break;
-  //       case 1: // working fulltime
-  //         currentWorking = fulltime;
-  //         workingHours += fulltime;
-  //         workingDays++;
-  //         break;
-  //       default:
-  //         // on leave
-  //         break;
-  //     }
-  //     monthlyPay += currentWorking * dailyWage;
-  //     this.wages.push(currentWorking * dailyWage);
-  //   }
-  //   // return result
-  //   return {
-  //     monthlyPay,
-  //     workingHours,
-  //     workingDays,
-  //   };
-  // }
+      // calculate daily pay as per attendance
+      switch (currentWorkingHours) {
+        case 0: // working parttime
+          currentWorking = parttime;
+          workingHours += parttime;
+          workingDays++;
+          break;
+        case 1: // working fulltime
+          currentWorking = fulltime;
+          workingHours += fulltime;
+          workingDays++;
+          break;
+        default:
+          // on leave
+          break;
+      }
+      monthlyPay += currentWorking * dailyWage;
+      this.wages.push(currentWorking * dailyWage);
+    }
+    // return result
+    return {
+      monthlyPay,
+      workingHours,
+      workingDays,
+    };
+  }
 
   // // uc9a - Calc total Wage using Array forEach or reduce method
   // get totalWage() {
@@ -191,11 +191,11 @@ class Employee {
 }
 
 const dk = new Employee();
-console.log(dk.generateRandomMonthlyWage());
-// const restrictedWage = dk.getRestrictedWage();
-// console.log(
-//   `Daily pays: ${dk.wages}\nMonthly pay: ${restrictedWage.monthlyPay}\nWorking hours: ${restrictedWage.workingHours}/${maxHours}\nWorking days: ${restrictedWage.workingDays}/${maxDays}`
-// );
+
+const restrictedWage = dk.getRestrictedWage();
+console.log(
+  `Daily pays: ${dk.wages}\nMonthly pay: ${restrictedWage.monthlyPay}\nWorking hours: ${restrictedWage.workingHours}/${maxHours}\nWorking days: ${restrictedWage.workingDays}/${maxDays}`
+);
 
 // console.log("\n----------\n");
 
