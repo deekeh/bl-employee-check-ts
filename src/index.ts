@@ -166,15 +166,15 @@ class Employee {
     return this.detailedDailyWage.filter((day) => day.wage !== 0).length;
   }
 
-  // // uc10 - showing map of wages
-  // get wageMap() {
-  //   const wageMap = new Map();
-  //   this.detailedDailyWage.forEach((day) => {
-  //     wageMap.set(day.day, day.wage);
-  //   });
-  //   wageMap.set("Total wage", this.totalWage);
-  //   return wageMap;
-  // }
+  // uc10 - showing map of wages
+  get wageMap() {
+    const wageMap = new Map();
+    this.detailedDailyWage.forEach((day) => {
+      wageMap.set(day.day, day.wage);
+    });
+    wageMap.set("Total wage", this.totalWage);
+    return wageMap;
+  }
 
   // // uc11 - object creation
   // get allWageObject() {
@@ -223,9 +223,9 @@ console.log(`Part time days: ${dk.partTimeDays.map((d) => d.day)}`);
 // uc9g
 console.log(`Total working days: ${dk.workingDays}`);
 
-// // uc10
-// console.log("Wage map:");
-// console.log(dk.wageMap);
+// uc10
+console.log("Wage map:");
+console.log(dk.wageMap);
 
 // // uc11
 // console.log("Wage object:");
