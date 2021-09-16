@@ -52,36 +52,36 @@ class Employee {
     return hrs * dailyWage;
   }
 
-  // // uc4 - generate monthly wage of an employee based on 20 random attendances
-  // generateRandomMonthlyWage() {
-  //   // setting initial values
-  //   let monthlyPay = 0,
-  //     hrs;
+  // uc4 - generate monthly wage of an employee based on 20 random attendances
+  generateRandomMonthlyWage() {
+    // setting initial values
+    let monthlyPay = 0,
+      hrs;
 
-  //   // looping for 20 days
-  //   for (let day = 0; day < maxDays; day++) {
-  //     let empCase: number = this.randomAttendance();
-  //     this.attendance.push(empCase);
-  //     switch (empCase) {
-  //       case 0:
-  //         hrs = parttime;
-  //         break;
-  //       case 1:
-  //         hrs = fulltime;
-  //         break;
-  //       default:
-  //         hrs = 0;
-  //         break;
-  //     }
-  //     monthlyPay += hrs * dailyWage;
-  //   }
-  //   // console.log("Attendance:", this.attendance);
-  //   // UNCOMMENT THE ABOVE LINE (67) TO PRINT THE ARRAY OF ATTENDANCE
-  //   // 0 - PARTTIME
-  //   // 1 - FULLTIME
-  //   // 2 - LEAVE
-  //   return monthlyPay;
-  // }
+    // looping for 20 days
+    for (let day = 0; day < maxDays; day++) {
+      let empCase: number = this.randomAttendance();
+      this.attendance.push(empCase);
+      switch (empCase) {
+        case 0:
+          hrs = parttime;
+          break;
+        case 1:
+          hrs = fulltime;
+          break;
+        default:
+          hrs = 0;
+          break;
+      }
+      monthlyPay += hrs * dailyWage;
+    }
+    // console.log("Attendance:", this.attendance);
+    // UNCOMMENT THE ABOVE LINE (67) TO PRINT THE ARRAY OF ATTENDANCE
+    // 0 - PARTTIME
+    // 1 - FULLTIME
+    // 2 - LEAVE
+    return monthlyPay;
+  }
 
   // getRestrictedWage() {
   //   this.generateRandomMonthlyWage();
@@ -191,7 +191,7 @@ class Employee {
 }
 
 const dk = new Employee();
-console.log(dk.generateRandomDailyWage());
+console.log(dk.generateRandomMonthlyWage());
 // const restrictedWage = dk.getRestrictedWage();
 // console.log(
 //   `Daily pays: ${dk.wages}\nMonthly pay: ${restrictedWage.monthlyPay}\nWorking hours: ${restrictedWage.workingHours}/${maxHours}\nWorking days: ${restrictedWage.workingDays}/${maxDays}`
